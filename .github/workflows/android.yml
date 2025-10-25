@@ -2,13 +2,15 @@ name: Release
 
 # 触发条件: 这里是push以”v“开头的tag触发
 on:
-  push:
+  workflow_dispatch:
+
+  #push:
     # 根据branch或者tags来触发
     # branches:
     #  - main
 
-    tags:
-      - "v*"
+    #tags:
+    #  - "v*"
     # 忽略的标签类型，不触发构建流程(和tags不能同时写)
     # tags-ignore:
     #   - "d*"
@@ -71,7 +73,7 @@ jobs:
 
       # 重命名apk
       # GITHUB_REF_NAME是“触发workflow的分支或tag名称”
-      - run: mv ${{steps.sign_app.outputs.signedReleaseFile}} fundark_$GITHUB_REF_NAME.apk
+      - run: mv ${{steps.sign_app.outputs.signedReleaseFile}} fundark_$(date +"YYYY-MM-DD-HH-mm-ss").apk
         # 可以指定shell命令的执行目录
         # working-directory: ./temp
         # 只当shell的类型
