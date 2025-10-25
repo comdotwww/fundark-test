@@ -22,6 +22,36 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+            <!-- 用于监听快手唤起的过滤器 (示例) -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:scheme="kwai"
+                    android:host="." />
+            </intent-filter>
+
+            <!-- 用于监听快手极速版唤起的过滤器 (示例) -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:scheme="ksnebula"
+                    android:host="." />
+            </intent-filter>
+
+            <!-- 用于监听今日头条唤起的过滤器 (示例) -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:scheme="snssdk141"
+                    android:host="." />
+            </intent-filter>
         </activity>
     </application>
 
